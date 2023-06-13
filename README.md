@@ -15,7 +15,6 @@ This project generates a basic shape logo in the form of a circle, triangle, or 
 
 This project requires Node.js, Jest, and Inquirer to function.   
 The inquirer package can be found below:  
-
 https://www.npmjs.com/package/inquirer/v/8.2.4  
 Jest package:  
 https://www.npmjs.com/package/jest  
