@@ -13,7 +13,7 @@ const questions = [
     {
         name: "textColor",
         type: "input",
-        message: "Input text color:"
+        message: "Input text color (Enter color keyword OR a hexadecimal number):"
     },
     {
         name: "shape",
@@ -24,7 +24,7 @@ const questions = [
     {
         name: "shapeColor",
         type: "input",
-        message: "Input shape color:"
+        message: "Input shape color (Enter color keyword OR a hexadecimal number):"
     },
 ];
 
@@ -39,8 +39,14 @@ function writeToFile(fileName, data) {
 
 //function to handleAnswers
 const handleAnswers = (answers) => {
-    console.log(answers);
-    writeToFile('logo.svg', generateLogo(answers));
+    if (answers.text.length > 3) {
+        console.log("Text must be 3 characters or less");
+        init(); //makes user enter params again if text if more than 3 chars
+      } else {
+        //Generate SVG file
+        //console.log(answers);
+        writeToFile('logo.svg', generateLogo(answers));
+      }
 }
 // WHEN I have entered input for all the prompts
 // THEN an SVG file is created named `logo.svg`
