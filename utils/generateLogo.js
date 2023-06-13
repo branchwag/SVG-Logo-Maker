@@ -4,7 +4,6 @@ const Square = require('../lib/Square.js');
 const Circle = require('../lib/Circle.js');
 
 function generateLogo(data) {
-
     if (data.shape === "Circle") {
         const circleLogo = new Circle()
         return circleLogo.render(data);
@@ -15,10 +14,11 @@ function generateLogo(data) {
         const squareLogo = new Square()
         return squareLogo.render(data);
       }
-
-    
 }
 
+module.exports = generateLogo;
+
+//Criteria for reference: 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for text
 // THEN I can enter up to three characters
@@ -37,5 +37,3 @@ function generateLogo(data) {
 // AND the output text "Generated logo.svg" is printed in the command line
 // WHEN I open the `logo.svg` file in a browser
 // THEN I am shown a 300x200 pixel image that matches the criteria I entered
-
-module.exports = generateLogo;
